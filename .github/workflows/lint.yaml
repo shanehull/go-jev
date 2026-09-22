@@ -11,6 +11,7 @@ permissions:
 jobs:
   Lint:
     runs-on: ubuntu-latest
+    if: ${{ !startsWith(github.head_ref, 'release-please--branches--') }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-go@v6
